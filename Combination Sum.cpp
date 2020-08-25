@@ -85,7 +85,7 @@ public:
      }
      for(int i=idx;i<candidates.size();i++)
      {
-      if(i>idx && candidates[i]==candidates[i-1])// for not storing duplicate answer
+      if(i>idx && candidates[i]==candidates[i-1])// for not storing duplicate answer(i.e-[1,2,2,2,5] and tar=5, so not storing {1,2,2} 2 times)
           continue;
       res.push_back(candidates[i]);
       doit(ans,res,candidates,tar-candidates[i],i+1);

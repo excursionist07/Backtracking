@@ -42,6 +42,28 @@ public:
     }
 };
 
+// 47. Permutations II
+
+class Solution {
+public:
+    vector<vector<int>>permuteUnique(vector<int>& nums)
+    {
+     int n=nums.size();
+     vector<vector<int>>ans;
+     set<vector<int>>ss;
+     if(n==0)
+         return ans;
+     sort(nums.begin(),nums.end());
+     do{
+        ss.insert(nums);
+     }while(next_permutation(nums.begin(),nums.end()));
+     
+     for(auto xx:ss)
+         ans.push_back(xx);
+     return ans;
+    }
+};
+
 // 31. Next Permutation
 
 class Solution {

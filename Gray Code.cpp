@@ -1,5 +1,7 @@
 // 89. Gray Code
 
+// The gray code is a binary numeral system where two successive values differ in only one bit.
+
 class Solution {
 public:
     vector<int> grayCode(int n) 

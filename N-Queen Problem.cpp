@@ -67,10 +67,11 @@ public:
     }
 };
 
-// 52. N-Queens II
+// 52. N-Queens II(count total permutation)
 
 class Solution {
 public:
+    int ans;
     bool IsSafe(vector<string>&cur,int row,int col,int n)
     {
      for(int i=0;i<col;i++)
@@ -96,11 +97,11 @@ public:
      }
      return false;
     }
-    void doit(vector<vector<string>>&ans,vector<string>&cur,int col,int n)
+    void doit(vector<string>&cur,int col,int n)
     {
      if(col>=n)
      {
-      ans.push_back(cur);
+      ans++;
       return;
      }
      for(int row=0;row<n;row++)
@@ -108,7 +109,7 @@ public:
       if(!IsSafe(cur,row,col,n))
       {
        cur[row][col]='Q';
-       doit(ans,cur,col+1,n);
+       doit(cur,col+1,n);
        cur[row][col]='.';
       }
      }
@@ -117,9 +118,9 @@ public:
     {
      if(n==0)
          return 0;
-     vector<vector<string>>ans;
+     ans=0;
      vector<string>cur(n,string(n,'.'));
-     doit(ans,cur,0,n);
-     return ans.size();
+     doit(cur,0,n);
+     return ans;
     }
 };

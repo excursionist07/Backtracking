@@ -1,4 +1,8 @@
-vector<vector<int>>ans;
+// 39. Combination Sum
+
+class Solution {
+public:
+    vector<vector<int>>ans;
     void combination(vector<int>& candidates,int target,int sum,int index,vector<int>&res)
     {
      if(sum==target)
@@ -21,3 +25,4 @@ vector<vector<int>>ans;
      combination(candidates,target,0,0,res);
      return ans;
     }
+};

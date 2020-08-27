@@ -38,8 +38,8 @@ public:
        for(int k=j+1;k<n;k++)
        {
         temp=temp.substr(0,k)+"."+temp.substr(k,n-k);
-        temp=temp.substr(0,j)+"."+temp.substr(j,n-j+1);
-        temp=temp.substr(0,i)+"."+temp.substr(i,n-i+2);
+        temp=temp.substr(0,j)+"."+temp.substr(j,n-j+1);// after above step temp size increases by 1 due to 1 dot
+        temp=temp.substr(0,i)+"."+temp.substr(i,n-i+2);// after above two steps temp size increases by 2 due to 2 dot
         if(IsValid(temp))
             ans.push_back(temp);
         temp=s;

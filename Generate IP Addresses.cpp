@@ -59,9 +59,9 @@ void convert(string IP)
   {
    for(ll k=j+1;k<len;k++)
    {
-    check=check.substr(0,k)+"."+check.substr(k,len-k+2);
-    check=check.substr(0,j)+"."+check.substr(j,len-j+3);
-    check=check.substr(0,i)+"."+check.substr(i,len-i+4);
+    check=check.substr(0,k)+"."+check.substr(k,len-k);
+    check=check.substr(0,j)+"."+check.substr(j,len-j+1);
+    check=check.substr(0,i)+"."+check.substr(i,len-i+2);
     if(is_valid(check))
         ans.pb(check);
     check=IP;

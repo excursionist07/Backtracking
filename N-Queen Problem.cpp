@@ -1,5 +1,7 @@
 // 51. N-Queens(All possible permutation)
 
+// fill column-wise
+
 class Solution {
 public:
     bool IsSafe(vector<string>&cur,int row,int col,int n)

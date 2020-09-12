@@ -1,6 +1,12 @@
 // 37. Sudoku Solver
 
 #define N 9
+/*
+Time complexity: O(9^(n*n)).
+For every unassigned index there are 9 possible options so the time complexity is O(9^(n*n)).
+Space Complexity: O(n*n).
+To store the output array a matrix is needed.
+*/
 
 class Solution {
 public:

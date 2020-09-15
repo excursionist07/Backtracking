@@ -2,27 +2,28 @@
 
 class Solution {
 public:
-    vector<vector<int>>ans;
-    void combination(vector<int>& candidates,int target,int sum,int index,vector<int>&res)
+   void doit(vector<int>& candidates,int target,int sum,int idx,vector<int>res,vector<vector<int>>&ans)
+   {
+    if(sum==target)
     {
-     if(sum==target)
-     {
-      ans.push_back(res);
-      return;
-     }
-     if(candidates.size()==index || candidates[index]+sum>target)
-         return;
-     res.push_back(candidates[index]);
-     combination(candidates,target,sum+candidates[index],index,res);
-     res.pop_back();
-     combination(candidates,target,sum,index+1,res);
+     ans.push_back(res);
+     return;
     }
+    if(idx>=candidates.size() || sum+candidates[idx]>target)
+        return;
+    res.push_back(candidates[idx]);
+    doit(candidates,target,sum+candidates[idx],idx,res,ans);
+    res.pop_back();
+    doit(candidates,target,sum,idx+1,res,ans);
     
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target)
+   }
+    
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
     {
      vector<int>res;
+     vector<vector<int>>ans;
      sort(candidates.begin(),candidates.end());
-     combination(candidates,target,0,0,res);
+     doit(candidates,target,0,0,res,ans);
      return ans;
     }
 };

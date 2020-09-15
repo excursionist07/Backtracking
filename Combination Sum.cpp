@@ -41,14 +41,11 @@ public:
          return;
      if(tar==0)
      {
-      //ans.push_back(res);
       ss.insert(res);
       return;
      }
      for(int i=idx;i<candidates.size();i++)
      {
-      //if(i>idx && candidates[i]==candidates[i-1])
-         // continue;
       res.push_back(candidates[i]);
       doit(ans,res,candidates,tar-candidates[i],i+1);
       res.pop_back();

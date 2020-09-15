@@ -68,7 +68,7 @@ public:
 
 class Solution {
 public:
-    void doit(vector<vector<int>>&ans,vector<int>&res,vector<int>&candidates,int tar,int idx)
+    void doit(vector<vector<int>>&ans,vector<int>res,vector<int>&candidates,int tar,int idx)
     {
      if(tar<0)
          return;

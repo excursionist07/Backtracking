@@ -100,4 +100,36 @@ public:
     }
 };
 
+// 216. Combination Sum III
+
+class Solution {
+public:
+    void doit(vector<int>&candidates,vector<int>res,vector<vector<int>>&ans,int k,int tar,int idx)
+    {
+     if(tar<0)
+         return;
+     if(tar==0 && res.size()==k)
+     {
+      ans.push_back(res);
+      return;
+     }
+     for(int i=idx;i<candidates.size();i++)
+     {
+      res.push_back(candidates[i]);
+      doit(candidates,res,ans,k,tar-candidates[i],i+1);
+      res.pop_back();
+     }
+    }
+    vector<vector<int>> combinationSum3(int k, int n)
+    {
+     vector<int>candidates;
+     for(int i=1;i<=9;i++)
+         candidates.push_back(i);
+     vector<int>res;
+     vector<vector<int>>ans;
+     doit(candidates,res,ans,k,n,0);
+     return ans;
+    }
+};
+
 

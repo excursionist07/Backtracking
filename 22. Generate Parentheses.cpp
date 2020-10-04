@@ -19,7 +19,7 @@ public:
     }
     vector<string> generateParenthesis(int n)
     {
-     vector<string>ans;
+      vector<string>ans;
       if(n==0)return ans;
       printparenthesis(n,0,0,"",ans);
       return ans;

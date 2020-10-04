@@ -1,6 +1,6 @@
 // 89. Gray Code
 
-// The gray code is a binary numeral system where two successive values differ in only one bit.
+// The gray code is a n bits binary numeral system where two successive values differ in only one bit.
 
 class Solution {
 public:

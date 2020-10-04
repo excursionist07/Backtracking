@@ -1,11 +1,7 @@
-
 class Solution {
 public:
-   
-   
     void printparenthesis(int n,int open,int close,string str,vector<string>&ans)
     {
-    
      if(close==n)
      {
          ans.push_back(str);

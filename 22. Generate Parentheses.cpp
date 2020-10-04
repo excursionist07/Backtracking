@@ -1,6 +1,11 @@
-void printparenthesis(int n,int open,int close,string str,vector<string>&ans)
-    {
 
+class Solution {
+public:
+   
+   
+    void printparenthesis(int n,int open,int close,string str,vector<string>&ans)
+    {
+    
      if(close==n)
      {
          ans.push_back(str);
@@ -10,10 +15,10 @@ void printparenthesis(int n,int open,int close,string str,vector<string>&ans)
      {
       if(open>close)
         printparenthesis(n,open,close+1,str+')',ans);
-
+      
       if(open<n)
         printparenthesis(n,open+1,close,str+'(',ans);
-
+      
      }
     }
     vector<string> generateParenthesis(int n)

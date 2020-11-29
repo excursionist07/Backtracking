@@ -45,3 +45,40 @@ Prefix all entries of L1 with ‘0’, L1 becomes {000, 001, 011, 010}
 Prefix all entries of L2 with ‘1’, L2 becomes {110, 111, 101, 100} 
 Concatenate L1 and L2, we get {000, 001, 011, 010, 110, 111, 101, 100}
 */
+
+
+
+// 932. Beautiful Array
+
+/*
+For some fixed N, an array A is beautiful if it is a permutation of the integers 1, 2, ..., N, such that:
+For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].
+Given N, return any beautiful array A.  (It is guaranteed that one exists.)
+*/
+
+class Solution {
+public:
+    vector<int> beautifulArray(int N) 
+    {
+     vector<int>vv={1};
+     while(vv.size()<N)
+     {
+      vector<int>temp;
+      for(auto xx:vv)
+      {
+       if((2*xx-1)<=N)
+           temp.push_back(2*xx-1);
+      }
+      for(auto xx:vv)
+      {
+       if((2*xx)<=N)
+           temp.push_back(2*xx);
+      }
+      vv=temp;
+     }
+     return vv;
+    }
+};
+
+// https://leetcode.com/problems/beautiful-array/discuss/186679/Odd-%2B-Even-Pattern-O(N)
+

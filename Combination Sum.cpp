@@ -2,29 +2,31 @@
 
 class Solution {
 public:
-   void doit(vector<int>& candidates,int target,int sum,int idx,vector<int>res,vector<vector<int>>&ans)
-   {
-    if(sum==target)
+    void doit(vector<int>&candidates,vector<int>vv,vector<vector<int>>&ans,int idx,int sum,int tar)
     {
-     ans.push_back(res);
-     return;
+     if(idx>=candidates.size() || sum>tar)
+         return;
+     if(sum==tar)
+     {
+      ans.push_back(vv);
+      return;
+     }
+     vv.push_back(candidates[idx]);
+     doit(candidates,vv,ans,idx,sum+candidates[idx],tar);
+     vv.pop_back();
+     doit(candidates,vv,ans,1+idx,sum,tar);
+     
+     
     }
-    if(idx>=candidates.size() || sum+candidates[idx]>target)
-        return;
-    res.push_back(candidates[idx]);
-    doit(candidates,target,sum+candidates[idx],idx,res,ans);
-    res.pop_back();
-    doit(candidates,target,sum,idx+1,res,ans);
-    
-   }
-    
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
     {
-     vector<int>res;
-     vector<vector<int>>ans;
-     sort(candidates.begin(),candidates.end());
-     doit(candidates,target,0,0,res,ans);
-     return ans;
+      int n=candidates.size();
+      sort(candidates.begin(),candidates.end());
+      vector<vector<int>>ans;
+      vector<int>vv;
+      doit(candidates,vv,ans,0,0,target);
+      return ans;
+      
     }
 };
 

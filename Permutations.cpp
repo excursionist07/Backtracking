@@ -1,29 +1,32 @@
 // 46. Permutations
 
-vector<vector<int>>ans;
-    void doit(vector<int>& nums,int lo,int hi)
+class Solution {
+public:
+    void permute(vector<int>& nums,int idx,vector<vector<int>>& ans)
     {
-      if(lo==hi)
-        ans.push_back(nums);
-      else
-      {
-      for(int i=lo;i<=hi;i++)
-      {
-        swap(nums[lo],nums[i]);//swap
-        doit(nums,lo+1,hi);//recursion
-        swap(nums[lo],nums[i]);//backtrack
-      }
-      }
-
+     if(idx==nums.size())
+     {
+      ans.push_back(nums);
+      return;
+     }
+     for(int i=idx;i<nums.size();i++)
+     {
+      swap(nums[i],nums[idx]);
+      permute(nums,idx+1,ans);
+      swap(nums[i],nums[idx]); // reset/backtrack
+       
+     }
     }
-
-    vector<vector<int>> permute(vector<int>& nums)
+    vector<vector<int>> permute(vector<int>& nums) 
     {
-      int n=nums.size();
-      doit(nums,0,n-1);
-      return ans;
+     int n=nums.size();
+     vector<vector<int>>ans;
+     permute(nums,0,ans);
+     return ans;
+     
+     
     }
-
+};
 // using STL
 
 class Solution {

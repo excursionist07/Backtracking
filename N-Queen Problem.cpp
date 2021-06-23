@@ -1,3 +1,9 @@
+/*
+The worst case “brute force” solution for the N-queens puzzle has an O(n^n) time complexity. 
+This means it will look through every position on an NxN board, N times, for N queens.
+It is by far the slowest and most impractical method.
+*/
+
 // 51. N-Queens(All possible permutation)
 
 // fill column-wise

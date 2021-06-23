@@ -78,7 +78,7 @@ public:
        board[row][col]=ch;
        if(solve(board))
            return true;
-       board[row][col]='.';
+       board[row][col]='.'; // bacaktrack if not possible
       }
      }
      return false;

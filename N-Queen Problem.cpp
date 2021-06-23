@@ -99,6 +99,8 @@ public:
      }
      return false;
     }
+    
+    
     void doit(vector<string>&cur,int col,int n)
     {
      if(col>=n)
@@ -116,6 +118,8 @@ public:
       }
      }
     }
+    
+    
     int totalNQueens(int n) 
     {
      if(n==0)

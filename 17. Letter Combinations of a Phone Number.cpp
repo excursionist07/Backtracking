@@ -21,9 +21,9 @@ public:
      if(n==0)
          return ans;
      vector<string>dict;
-     dict.push_back("");
-     dict.push_back("");
-     dict.push_back("abc");
+     dict.push_back(""); // digit 0
+     dict.push_back(""); // digit 1
+     dict.push_back("abc"); // digit 2 corresponds to this
      dict.push_back("def");
      dict.push_back("ghi");
      dict.push_back("jkl");
